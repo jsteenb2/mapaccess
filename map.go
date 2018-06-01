@@ -16,7 +16,7 @@ func AccessWithEmptyStructs(f []int) []int {
 		9: {},
 	}
 
-	var newF []int
+	newF := make([]int, 0, len(validFeatures))
 	for _, feature := range f {
 		if _, ok := validFeatures[feature]; !ok {
 			continue
@@ -42,7 +42,7 @@ func AccessWithBool(f []int) []int {
 		9: true,
 	}
 
-	var newF []int
+	newF := make([]int, 0, len(validFeatures))
 	for _, feature := range f {
 		if !validFeatures[feature] {
 			continue
